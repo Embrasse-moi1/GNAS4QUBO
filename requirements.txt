@@ -1,0 +1,14 @@
+numpy==1.19.5
+networkx==2.5
+easydict
+tokenizers
+torch
+torch-geometric
+nas_bench_graph
+ray
+pyqubo
+torchmetrics
+transformers
+yacs
+pytz
+openhgnn
