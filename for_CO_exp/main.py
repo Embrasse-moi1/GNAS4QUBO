@@ -4,9 +4,10 @@ import openai
 from train_gnn import *
 import json
 import requests
+from fine_tune_llm.retrieval_qa import *
 
 # Get GNN architecture from GPT
-openai.api_key = "sb-55a412fbe6958d0982e73f8765bb7dfaf38c254c4c5b6b67"
+openai.api_key = "xxx"
 openai.api_base = "https://api.openai-sb.com/v1/chat/completions"
 
 headers = {
@@ -27,16 +28,32 @@ gnn_list = [
 ]
 
 link_list = [
-    # [0, 0, 0, 0],
-    # [0, 0, 0, 1],
-    # [0, 0, 1, 1],
-    # [0, 0, 1, 2],
-    # [0, 0, 1, 3],
+    [0, 0, 0, 0],
+    [0, 0, 0, 1],
+    [0, 0, 1, 1],
+    [0, 0, 1, 2],
+    [0, 0, 1, 3],
     [0, 1, 1, 1],
     [0, 1, 1, 2],
     [0, 1, 2, 2],
-    # [0, 1, 2, 3]
+    [0, 1, 2, 3]
 ]
+
+# using fine-tune LLM
+
+model_path = '../LLM/model/Llama-3-8B-Instruct'
+lora_path = './llama3_finetune'
+tokenizer, model = pre_process(model_path, lora_path)
+prompt1 = '''The task is to provide some helpful graph neural network architectures based on a given dataset. \
+These architectures will be trained and tested on cora, and the architectures you provide should enable the model to achieve high accuracy.\n\
+The connection method of the architecture is as follows: The first operation is the input, the last operation is the output,\
+and the middle operations are candidate operations. The adjacency matrix for the operation connections is as follows:[[0, 1, 1, 1, 0, 0],[0, 0, 0, 0, 1, 0],[0, 0, 0, 0, 0, 1],[0, 0, 0, 0, 0, 1],[0, 0, 0, 0, 0, 1],[0, 0, 0, 0, 0, 0]], \
+where the element (i,j) in the adjacency matrix indicates that the output of operation i will be used as the input for operation j.\n\
+There are nine candidate operations for the architecture: {{gcn, gat, sage, gin, cheb, arma, graph, fc, skip}}.\n\
+Please return some architecture models based on the GNN architecture and the relevant dataset I provided. Each model should contain four operations.'''
+response1 = llama3(prompt1, model, tokenizer)
+
+
 operation_dict = {'GCN': 'gcn', 'GAT': 'gat', 'GraphSAGE': 'sage', 'GIN': 'gin', 'ChebNet': 'cheb', 'ARMA': 'arma',
                   'k-GNN': 'graph', 'skip': 'skip', 'fully-connected-layer': 'fc'}
 dataname = 'Gset published by stanford university which is related to graph theory, and the Gset dataset are random d-regular graphs'
@@ -48,7 +65,7 @@ if __name__ == "__main__":
         # 写入GNN宏观架构
         with open("experiment.txt", "a") as file:
             file.write(str(link) + "\n")
-        messages = [{"role": "system", "content": system_content},
+        messages = [{"role": "system", "content": system_content + response1},
                     {"role": "user", "content": main_prompt_word(link=tuple(link), dataname=dataname, stage=0)}, ]
         payload = {
             "model": 'gpt-4',

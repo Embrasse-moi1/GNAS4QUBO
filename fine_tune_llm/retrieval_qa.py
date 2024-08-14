@@ -19,7 +19,7 @@ def pre_process(model_path, lora_path):
     )
     model = PeftModel.from_pretrained(model, model_id=lora_path, config=config)
     return tokenizer, model
-
+a = 200
 
 def llama3(prompt, model, tokenizer):
     messages = [{"role": "user", "content": prompt}]
@@ -42,7 +42,7 @@ def llama3(prompt, model, tokenizer):
 
 
 if __name__ == '__main__':
-    model_path = '/home/zhangzg/LLM/model/Llama-3-8B-Instruct'
+    model_path = '../LLM/model/Llama-3-8B-Instruct'
     lora_path = './llama3_finetune'
     tokenizer, model = pre_process(model_path, lora_path)
     prompt1 = '''The task is to provide some helpful graph neural network architectures based on a given dataset. \

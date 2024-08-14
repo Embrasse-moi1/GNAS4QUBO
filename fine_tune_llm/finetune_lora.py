@@ -10,7 +10,7 @@ df = pd.read_json('./finetune.json')
 ds = Dataset.from_pandas(df)
 print(ds[:3])  # 打印数据集的前3条记录
 
-tokenizer = AutoTokenizer.from_pretrained('/home/zhangzg/LLM/model/Llama-3-8B-Instruct', use_fast=False,
+tokenizer = AutoTokenizer.from_pretrained('../LLM/model/Llama-3-8B-Instruct', use_fast=False,
                                           trust_remote_code=True)
 tokenizer.pad_token = tokenizer.eos_token
 
