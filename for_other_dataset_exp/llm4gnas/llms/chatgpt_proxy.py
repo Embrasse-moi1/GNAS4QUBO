@@ -2,7 +2,7 @@ import json
 
 import requests
 
-from llm4gnas.llms.llm_base import LLMBase
+from for_other_dataset_exp.llm4gnas.llms.llm_base import LLMBase
 
 
 class ChatGPTProxy(LLMBase):

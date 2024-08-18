@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ee3e66c-5679-4778-b5c0-b5f32b417ddc" name="更改" comment="2" />
+    <list default="true" id="4ee3e66c-5679-4778-b5c0-b5f32b417ddc" name="更改" comment="3">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/for_other_dataset_exp/llm4gnas/llms/chatgpt.py" beforeDir="false" afterPath="$PROJECT_DIR$/for_other_dataset_exp/llm4gnas/llms/chatgpt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/for_other_dataset_exp/llm4gnas/llms/chatgpt_proxy.py" beforeDir="false" afterPath="$PROJECT_DIR$/for_other_dataset_exp/llm4gnas/llms/chatgpt_proxy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,6 +48,7 @@
       <recent name="C:\Users\wjx0025\Desktop\code\llmgnas4co\llm_as_gnas\autogel" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\wjx0025\Desktop\code\GNAS4CO-main\gl\llm4gnas\.idea" />
       <recent name="C:\Users\wjx0025\Desktop\code\llmgnas4co\llm_as_gnas" />
       <recent name="C:\Users\wjx0025\Desktop\code\llmgnas4co\llm_as_gnas\nasbenchgraph" />
     </key>
@@ -107,13 +114,40 @@
       <option name="project" value="LOCAL" />
       <updated>1723637163864</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="3">
+      <option name="closed" value="true" />
+      <created>1723637260396</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1723637260396</updated>
+    </task>
+    <task id="LOCAL-00004" summary="3">
+      <option name="closed" value="true" />
+      <created>1723637264268</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1723637264268</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Commit message" />
     <MESSAGE value="1" />
     <MESSAGE value="2" />
-    <option name="LAST_COMMIT_MESSAGE" value="2" />
+    <MESSAGE value="3" />
+    <option name="LAST_COMMIT_MESSAGE" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/for_other_dataset_exp/llm4gnas/llms/chatgpt.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
